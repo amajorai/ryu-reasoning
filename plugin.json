@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ryu.reasoning",
+  "version": "1.0.0",
+  "description": "Automated reasoning checks: decide whether an answer is provably consistent with a written policy, using a solver rather than a second model.",
+  "keywords": [
+    "hallucination",
+    "verification",
+    "policy",
+    "formal-methods",
+    "solver"
+  ],
+  "extensions": {
+    "com.ryuhq.ryu": {
+      "id": "@ryu/reasoning",
+      "displayName": "Automated Reasoning"
+    }
+  }
+}
