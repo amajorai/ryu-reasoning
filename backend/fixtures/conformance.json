@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "id": "valid_manager_access",
+      "atoms": ["manager", "access"],
+      "rules": [
+        {
+          "kind": "implies",
+          "left": { "kind": "atom", "name": "manager" },
+          "right": { "kind": "atom", "name": "access" }
+        }
+      ],
+      "premises": [{ "kind": "atom", "name": "manager" }],
+      "claim": { "kind": "atom", "name": "access" },
+      "expected": "valid"
+    },
+    {
+      "id": "invalid_manager_access",
+      "atoms": ["manager", "access"],
+      "rules": [
+        {
+          "kind": "implies",
+          "left": { "kind": "atom", "name": "manager" },
+          "right": { "kind": "atom", "name": "access" }
+        }
+      ],
+      "premises": [{ "kind": "atom", "name": "manager" }],
+      "claim": {
+        "kind": "not",
+        "formula": { "kind": "atom", "name": "access" }
+      },
+      "expected": "invalid"
+    },
+    {
+      "id": "satisfiable_manager_access",
+      "atoms": ["manager", "access"],
+      "rules": [
+        {
+          "kind": "implies",
+          "left": { "kind": "atom", "name": "manager" },
+          "right": { "kind": "atom", "name": "access" }
+        }
+      ],
+      "premises": [],
+      "claim": { "kind": "atom", "name": "access" },
+      "expected": "satisfiable"
+    },
+    {
+      "id": "impossible_manager_access",
+      "atoms": ["manager", "access"],
+      "rules": [
+        { "kind": "atom", "name": "manager" },
+        {
+          "kind": "not",
+          "formula": { "kind": "atom", "name": "manager" }
+        }
+      ],
+      "premises": [],
+      "claim": { "kind": "atom", "name": "access" },
+      "expected": "impossible"
+    }
+  ]
+}
